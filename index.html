@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css animations</title>
+    <script src="jQuery.js"></script>
+    <style>
+        body {
+            background-color: rgb(235, 51, 10);
+            animation-name: change;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+        }
+
+        .one {
+            background-image: url("demonking.jpg");
+            background-repeat: no-repeat;
+            background-size: contain;
+            animation-name: transition;
+            animation-duration: 6s;
+            height: 600px;
+            width: 500px;
+            position: relative;
+            top: 50px;
+            margin: auto;
+            animation-iteration-count: infinite;
+        }
+
+        .second {
+            width: auto;
+            height: auto;
+            animation-name: spread;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+        }
+
+
+        @keyframes transition {
+            0% {
+                background-image: url("demonking.jpg")
+            }
+
+            10% {
+                box-shadow: 0px 0px 10px 23px #adff2f;
+            }
+
+            20% {
+                box-shadow: 0px 0px 10px 14px royalblue;
+            }
+
+            30% {
+                box-shadow: 0px 0px 12px 20px aqua;
+            }
+
+            40% {
+                box-shadow: 0px 0px 15px 25px darkgreen;
+            }
+
+            50% {
+                box-shadow: 0px 0px 10px 20px black;
+            }
+
+            60% {
+                box-shadow: 0px 0px 10px 16px whitesmoke;
+            }
+
+            55% {
+                background-image: url("prabhas.jpg");
+            }
+
+            75% {
+                box-shadow: 0px 0px 15px 13px orange;
+            }
+
+            85% {
+                box-shadow: 0px 0px 10px 16px black;
+            }
+
+            95% {
+                box-shadow: 0px 0px 10px 18px lightcyan;
+            }
+
+            100% {
+                background-image: url("demonking.jpg");
+            }
+
+
+        }
+
+        @keyframes change {
+            0% {
+                background-color: azure;
+            }
+
+            35% {
+                background-color: red;
+            }
+
+            60% {
+                background-color:black;
+            }
+            70%{
+                background-color: whitesmoke;
+            }
+
+            80% {
+                background-color: yellow;
+            }
+
+            100% {
+                background-color:royalblue;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+<audio id="song">
+        <source src="vikram.mpeg" type="audio/mp3">
+    </audio>
+    
+       <button style="border:3px solid black;font-size:large;font-family:'Courier New', Courier, monospace;top: 80px;left: 130px;position:absolute;background-color:inherit"
+         onclick="vikram()">playsong</button>
+
+    
+     <button style="border:3px solid black;font-size:large;font-family:'Courier New', Courier, monospace;top: 120px;left: 142px;position:absolute;background-color:inherit"
+         onclick="stopsound()">pause</button>
+    <div class="second">
+        <div class="one"></div>
+    </div>
+    
+    
+</body>
+<script>
+    let a = document.getElementById("song");
+    $("document").ready(vikram);
+    function vikram() {
+     a.autoplay = true;
+        a.play();
+    }
+function stopsound() {
+        let b = document.getElementById("song")
+        b.autoplay = false;
+        b.load();
+    }
+
+</script>
+
+
+</html>
+
